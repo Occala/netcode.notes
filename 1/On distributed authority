@@ -33,7 +33,8 @@ What do clients actually need in order to replicate what that cat is doing? They
 It may be walking, it may be eating, it may be sleeping.
 
 
-What does this cat look like in distributed authority then? We don't want the cat to eat or sleep too often. We also don't want odd discrepancies with its pathing. This is handled internally on the server in the above setup, so what differs in DA?
+What does this cat look like in distributed authority then? We don't want the cat to eat or sleep too often. We also don't want odd discrepancies with its pathing in the moment that someone becomes the authority.
+This is handled internally on the server in the above setup, so what differs in DA?
 
 State now needs to include additional info. What would normally be internal to the cat must be advertised over network. This is in case someone needs to resume the cat logic.
 There are things you could do to infer state without explicitly advertising it in some cases, but it's often not worth the extra complexity in my mind
