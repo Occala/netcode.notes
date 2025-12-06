@@ -29,7 +29,7 @@ The benefits of DA are overshadowed by the odd design required to utilize it pro
 
 Let's say we have some cat that navigates around our game field. It can travel to waypoints, it sometimes needs to eat, other times it needs to sleep. We can try to imagine what that would look like in client-server to start.
 
-What do clients actually need to in order to replicate what that cat is doing? They probably need a position, be that a realtime position or a destination. They probably also need something representing the state or animation of the cat.
+What do clients actually need in order to replicate what that cat is doing? They probably need a position, be that a realtime position or a destination. They probably also need something representing the state or animation of the cat.
 It may be walking, it may be eating, it may be sleeping.
 
 
