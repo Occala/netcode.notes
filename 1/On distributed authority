@@ -1,0 +1,48 @@
+as someone that primarily uses distributed authority, i don't like it
+
+DA paints a very unclear picture of authority and offers very little advantage in my mind, it requires additional complexity and bandwidth to account for
+
+
+In a true DA setup, it does potentially offer a latency advantage if data isn't routed through the host. Typically, data in a client-server setup, even if someone "owns" an object, is consistently routed through the host or server.
+We can imagine then, that if a relay is involved, data in client-server becomes: client -> relay -> host -> relay -> all clients
+
+DA in comparison, would allow something more like: client -> relay -> all clients
+
+The latency reduction there is tangible
+
+
+DA would allow (aptly) distributed share over entities being run in what would typically be server logic. Both cpu load and bandwidth are distributed by how many clients you have connected,
+the maximum is technically much higher as a result
+
+
+
+With that said, you can't trust a DA client. RTS games would fall into some hellish reconcilitation territory where actions have to be checked against historical data to resolve discrepancies in timing (who actually killed who first?)
+PvP shooters certainly wouldn't approach something resembling fair without a lot of complexity in this reconciliation realm and it's broken the moment someone cheats. MMO games would never allow this type of authority on clients
+
+
+So what types of games actually benefit? Small cooperative games maybe? Social games with minimal logic?
+
+The benefits of DA are overshadowed by the odd design required to utilize it properly. I think there are very good reasons client-server has become the norm
+
+
+
+
+Let's say we have some cat that navigates around our game field. It can travel to waypoints, it sometimes needs to eat, other times it needs to sleep. We can try to imagine what that would look like in client-server to start.
+
+What do clients actually need to in order to replicate what that cat is doing? They probably need a position, be that a realtime position or a destination. They probably also need something representing the state or animation of the cat.
+It may be walking, it may be eating, it may be sleeping.
+
+
+What does this cat look like in distributed authority then? We don't want the cat to eat or sleep too often. We also don't want odd discrepancies with its pathing. This is handled internally on the server in the above setup, so what differs in DA?
+
+State now needs to include additional info. What would normally be internal to the cat must be advertised over network. This is in case someone needs to resume the cat logic.
+There are things you could do to infer state without explicitly advertising it in some cases, but it's often not worth the extra complexity in my mind
+
+The cat now needs to track, on synced state: when it has last eaten, when it has last slept, its current waypoint destination, perhaps even the previous waypoint it visited.
+Any client that becomes the cat owner needs to be able to resume the cat's logic at any point if the current owner disconnects. This may involve some additional logic to interpret the resumed state.
+You may need to snap the cat to the nav mesh if you were using interpolation for the positions.
+
+
+This cat isn't an especially involved example, but you can imagine that this concern grows with more complex entities.
+
+The unexpected transfer of ownership starts to take over a lot of mental space in code. It simply doesn't exist in client-server and you can focus on what the thing actually does
