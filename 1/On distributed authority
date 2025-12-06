@@ -11,7 +11,7 @@ DA in comparison, would allow something more like: client -> relay -> all client
 The latency reduction there is tangible
 
 
-DA would allow (aptly) distributed share over entities being run in what would typically be server logic. Both cpu load and bandwidth are distributed by how many clients you have connected,
+DA also allows (aptly) a distributed share over entities being run in what would typically be server logic. Both cpu load and bandwidth are distributed by how many clients you have connected,
 the maximum is technically much higher as a result
 
 
