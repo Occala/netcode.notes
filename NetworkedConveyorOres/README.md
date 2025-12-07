@@ -85,7 +85,7 @@ We also need to be a little more mindful of resetting state when it's pulled, re
 
 
 I've done a pool in my networked environment before, it's a very lightweight pool that ticks at some interval.
-On tick, we check if we need to spawn more pooled objects to maintain a target count. We also prune if we're n above the target count,
+On tick, we check if we need to spawn more pooled objects to maintain a target count, spawning n network objects (typically 1) if we're below the target. We also prune if we're n above the target count,
 this allows a sort of floating count that's typically a bit above our intended free count
 
 Note that this only tracks free count, the pool doesn't actually know how many are active, it only maintains a single "free" list (idk if this is a good term for it).
