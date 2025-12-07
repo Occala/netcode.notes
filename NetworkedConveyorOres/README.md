@@ -11,7 +11,7 @@ These ore objects can be picked up and sync their realtime state at some rate
 I already have something to drastically rate-limit realtime networked transforms if they try to push more than I'd like, so I figured I'd give this simple approach a shot
 
 NOTE: I'll be referring to things like network spawning and despawning that aren't features of VRChat, I run custom networking in some of my more modern setups,
-it resembles a toy network library. It inherently bundles messages and dispatches at some rate (20Hz in this case), which is the crux of this being possible in the first place, so I guess just bear that in mind
+it resembles a toy network library. It inherently bundles messages and dispatches at some rate (20Hz in this case), which is the crux of some this being possible in the first place, so I guess just bear that in mind
 
 
 
