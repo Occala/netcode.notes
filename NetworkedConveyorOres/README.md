@@ -27,7 +27,7 @@ Let's try with a higher spawn rate to trial something that might be more typical
 
 https://github.com/user-attachments/assets/4d9cac4d-1e86-441d-bb5c-ebb817896a87
 
-We increased the rate about 5x, now the ores are stuttering quite a bit on the remote client.
+We increased the rate about 5x (which is an interval of ~0.15s), now the ores are stuttering quite a bit on the remote client.
 The host is also capping out and rate-limiting these realtime transforms (which is causing the sad interpolation)
 We really don't want to run the host that close to the cap to begin with and this approach isn't going to work
 
@@ -53,7 +53,7 @@ With the focus on physicality, we can't afford to style it that way
 
 
 
-I decided that I'd try to network the spawn events only, run the objects on the belts locally across all clients, but realtime network them if they're doing something important
+I decided that I'd try to network the spawn events only, run the objects on the belts locally across all clients, but realtime network them if they're doing something important.
 "something important" in this case, is if they're picked up
 
 So let's try:
