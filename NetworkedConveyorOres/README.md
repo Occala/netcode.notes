@@ -133,6 +133,9 @@ Objects on the belt may explode a bit because of physics, I could probably mitig
 
 Latency: What happens if someone is holding an ore when it's despawned from the pool? We can tell clients to drop ores they see being set inactive, that solves a small portion. Imagine though, if someone were to pick up an ore that's about to return to the pool and is subsequently reused, the host might interpret it as snapping to their hand just after leaving the mining machine/dropper. To handle this, I provide an incrementing identifier on objects pulled from the pool. This increments when they're returned to the pool and only uses 1 byte. If state updates (realtime or drop) do not match the synced identifier, we discard the state update. This should handle the case of a laggy client (or even a normal client) grabbing an object that returns to the pool and is pulled again by the host, before that remote client interprets it as being returned. (Hopefully that makes sense, basically we increment something when pool state changes and we use this to lock out stale data)
 
+
+In regards to latency, if someone dropped frames or drops packets, they may end up spawning cubes on top of each other. This kind of ruins the local simulation, it may be prefereable to queue spawns in some way or resimulate them for the amount of time lost, but it'd be more complex (a queue/consumption style for pooled spawns would probably be the best option there)
+
 Future:
 - Settled object propagation for clients in session:
 It's probably relevant to network ores that drop off conveyors and settle, to provide a more clear picture on settled objects that happen to leave conveyors more naturally from the host's perspective. We could probably infer this from triggers or collisions and some timing, then propagate the settled state.
