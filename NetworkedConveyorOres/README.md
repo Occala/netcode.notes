@@ -67,7 +67,7 @@ https://github.com/user-attachments/assets/13af96cf-1553-4374-93af-f324cb283884
 
 It works! Right?
 
-Even at our higher 5x testing rate, things are looking smooth, pickups and drops work decently and we're down to ~2500 bytes per second on the host during normal play
+Even at our higher 5x testing rate, things are looking smooth, pickups and drops work decently and we're down to ~2500 bytes per second on the host during normal play (note that around 1300 of this is from VRC networking unrelated to what I'm doing)
 
 We can do better though, can't we?
 
