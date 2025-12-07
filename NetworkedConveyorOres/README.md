@@ -6,8 +6,8 @@ In the past, I've typically made objects on conveyors local, they were only pseu
 
 
 
-I started out just trying a simple sample where I'd network spawn ores when they needed to drop and despawn these ores when they reached some endpoint
-These ore objects can be picked up and sync their realtime state at some rate
+I started out just trying a simple sample where I'd network spawn ores when they needed to drop and despawn these ores when they reached some endpoint.
+These ore objects can be picked up and sync their realtime state at some rate.
 I already have something to drastically rate-limit realtime networked transforms if they try to push more than I'd like, so I figured I'd give this simple approach a shot
 
 NOTE: I'll be referring to things like network spawning and despawning that aren't features of VRChat, I run custom networking in some of my more modern setups,
@@ -17,7 +17,7 @@ it resembles a toy network library. It inherently bundles messages and dispatche
 
 https://github.com/user-attachments/assets/49b7af6d-2d77-47da-bdb6-f8d8523bc670
 
-We can see in the video, it kind of works! The left client (host) propagates spawn and despawn events, ore cubes are synced in realtime and interpolated on the right client
+We can see in the video, it kind of works! The left client (host) propagates spawn and despawn events, ore cubes are synced in realtime and interpolated on the right client.
 Though we can see it's somewhat floaty, due to the low update rate. Towards the end we can also see that the host is very nearly capping out on bandwidth. Maybe not so good?
 
 
@@ -28,7 +28,7 @@ Let's try with a higher spawn rate to trial something that might be more typical
 https://github.com/user-attachments/assets/4d9cac4d-1e86-441d-bb5c-ebb817896a87
 
 We increased the rate about 5x (which is an interval of ~0.15s), now the ores are stuttering quite a bit on the remote client.
-The host is also capping out and rate-limiting these realtime transforms (which is causing the sad interpolation)
+The host is also capping out and rate-limiting these realtime transforms (which is causing the sad interpolation).
 We really don't want to run the host that close to the cap to begin with and this approach isn't going to work
 
 
@@ -39,7 +39,7 @@ I'm doing this in VRChat, I have to decide what to prioritize; I feel it's impor
 and players should be able to pick them them up and see them networked. If the game demo I mentioned was networking this, in the spirit of that game they'd certainly be networked ores.
 
 - This writes off making ores entirely local
-- Realtime sync isn't going to work in VRC when we're capped somewhere around 8 to 11 kilobytes per second
+- Realtime sync isn't going to work in VRC when we're capped somewhere around 8 to 11 kilobytes per second (though I would consider something like this in a real game, it depends)
 
 
 
@@ -78,9 +78,9 @@ The data looks something like this:
 PrefabId | NetId | OwnerId | Pos | Rot | Scale | ParentNetId
 
 
-That's a lot of unnecessary data if we can get away with pooling instead, it would be much less expensive on cpu cost too
+That's a lot of unnecessary data if we can get away with pooling instead, it would be much less expensive on cpu cost too.
 
-With pooling we just need to ensure we interact with the pool instead when we would have spawned or despawned the object
+With pooling we just need to ensure we interact with the pool instead when we would have spawned or despawned the object.
 We also need to be a little more mindful of resetting state when it's pulled, resetting things like velocity too.
 
 
@@ -88,13 +88,13 @@ I've done a pool in my networked environment before, it's a very lightweight poo
 On tick, we check if we need to spawn more pooled objects to maintain a target count. We also prune if we're n above the target count,
 this allows a sort of floating count that's typically a bit above our intended free count
 
-Note that this only tracks free count, the pool doesn't actually know how many are active, it only maintains a single "free" list (idk if this is a good term for it)
-When something wants to pull from the pool, the pool provides the last entry of the list. If none are available, it spawns the prefab in place and provides it
+Note that this only tracks free count, the pool doesn't actually know how many are active, it only maintains a single "free" list (idk if this is a good term for it).
+When something wants to pull from the pool, the pool provides the last entry of the list. If none are available, it spawns the prefab in place and provides it.
 I've found it works very well for the intended time-slicing nature needed in VRChat where udon overhead is pretty large,
 we can't afford to freeze a client by doubling the pool or something
 
 
-This requires a networked component on our ore, denoting if it's active or not. If it's active, we additionally read the position and rotation (pool spawn location)
+This requires a networked component on our ore, denoting if it's active or not. If it's active, we additionally read the position and rotation (pool spawn location).
 I also decided to add some seeding to this component, so each time we pull something it rolls a seed from the host and applies seeded scaling and color for some nice variation in ores
 
 https://github.com/user-attachments/assets/817b97fc-3b28-4ee0-8add-769739ed422a
@@ -104,11 +104,11 @@ but we're saving bandwidth compared to the previous example (which had around ha
 
 
 
-I added some minor fixes, changed the conveyor length and started focusing on a new mechanic. Ore splitting/grinding
+I added some minor fixes, changed the conveyor length and started focusing on a new mechanic. Ore splitting/grinding -
 Ores in the demo game can be ground down into smaller chunks, that's kind of a cool thing to try. We can support that pretty easily with pooling too.
 With instantiation, this would've caused pretty active frame drops as it requires making multiple chunks when an ore is split
 
-We'll add a component on the belt, when ores exit it from the host's perspective, they split into 2 or 3 ore shards, these are pulled from a pool managing those smaller shards
+We'll add a component on the belt, when ores exit it from the host's perspective, they split into 2 or 3 ore shards, these are pulled from a pool managing those smaller shards.
 Outside of that, they look very much like the ores in terms of components
 
 https://github.com/user-attachments/assets/45692c60-5a34-4e67-bfd9-c49b760771c2
