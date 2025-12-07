@@ -7,7 +7,7 @@ In the past, I've typically made objects on conveyors local, they were only pseu
 
 
 I started out just trying a simple sample where I'd network spawn ores when they needed to drop and despawn these ores when they reached some endpoint.
-These ore objects can be picked up and sync their realtime state at some rate.
+These ore objects sync their realtime state at some rate, they can also be picked up and dropped.
 I already have something to drastically rate-limit realtime networked transforms if they try to push more than I'd like, so I figured I'd give this simple approach a shot
 
 NOTE: I'll be referring to things like network spawning and despawning that aren't features of VRChat, I run custom networking in some of my more modern setups,
