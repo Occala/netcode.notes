@@ -1,6 +1,6 @@
 I recently tried a game demo which featured physical conveyors/objects, a lot of my learning and ideas stem from thinking about how to network something I've seen
 
-I've also done a fair amount of physical conveyor related work in VRChat already, so that part is trivial to do in a basic way, it's the networked portion that's important
+I've also done a fair amount of physical conveyor related stuff in VRChat already, so that part is trivial to do in a basic way, it's the networked portion that's important
 
 In the past, I've typically made objects on conveyors local, they were only pseudo-synced in the sense that the rate of dropping objects on them was known by all parties
 
