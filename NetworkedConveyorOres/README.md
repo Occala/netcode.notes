@@ -79,6 +79,8 @@ PrefabId | NetId | OwnerId | Pos | Rot | Scale | ParentNetId
 
 
 That's a lot of unnecessary data if we can get away with pooling instead, it would be much less expensive on cpu cost too.
+We really only need something like:
+ActiveState | Pos | Rot
 
 With pooling we just need to ensure we interact with the pool instead when we would have spawned or despawned the object.
 We also need to be a little more mindful of resetting state when it's pulled, resetting things like velocity too.
