@@ -127,3 +127,6 @@ This scales with how many ores are being pulled from the pool, returning them is
 Late joiners: They actually work decently, we advertise objects at their current position to late joins, so settled objects off the belt will generally align.
 Objects on the belt may explode a bit because of physics, I could probably mitigate this with more handling, but they receive a refreshed picture when the ores do a full run
 
+
+Latency: What happens if someone is holding an ore when it's despawned from the pool? We can tell clients to drop ores they see being set inactive, that solves a small portion. Imagine though, if someone were to pick up an ore that's being returned to the pool and subsequently reused, the host might interpret it as snapping to their hand, rather than dropping normally. To handle this, I provide an incrementing identifier on objects pulled from the pool. This increments when they're returned to the pool and only uses 1 byte. If state updates (realtime or drop) do not match the synced identifier, we discard the state update. This should handle the case of a laggy client (or even a normal client) grabbing an object that returns to the pool and is pulled again by the host before they interpret it as being returned. (Hopefully that makes sense, basically we increment something when pool state changes and we use this to lock out stale data)
+
