@@ -75,13 +75,7 @@ Instantiation is expensive, VRChat likely does some runtime checking across all 
 Additionally, it sends more data than is really necessary to spawn an object.
 The data looks something like this:
 
-PrefabId
-NetId
-OwnerId
-Pos
-Rot
-Scale
-ParentNetId
+PrefabId | NetId | OwnerId | Pos | Rot | Scale | ParentNetId
 
 
 That's a lot of unnecessary data if we can get away with pooling instead, it would be much less expensive on cpu cost too
