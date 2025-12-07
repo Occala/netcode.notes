@@ -108,7 +108,7 @@ I added some minor fixes, changed the conveyor length and started focusing on a 
 Ores in the demo game can be ground down into smaller chunks, that's kind of a cool thing to try. We can support that pretty easily with pooling too.
 With instantiation, this would've caused pretty active frame drops as it requires making multiple chunks when an ore is split
 
-We'll add a component on the belt, when ores exit it from the host's perspective, they split into 2 or 3 ore shards, these are pulled from a pool managing those smaller shards.
+We'll add an ore splitter on top of the conveyor (it looks like a thin white cube on the conveyor in the following video), when ores exit it from the host's perspective, they split into 2 or 3 ore shards, these are pulled from a pool managing those smaller shards.
 Outside of that, they look very much like the ores in terms of components
 
 https://github.com/user-attachments/assets/45692c60-5a34-4e67-bfd9-c49b760771c2
