@@ -89,7 +89,7 @@ On tick, we check if we need to spawn more pooled objects to maintain a target c
 this allows a sort of floating count that's typically a bit above our intended free count
 
 Note that this only tracks free count, the pool doesn't actually know how many are active, it only maintains a single "free" list (idk if this is a good term for it).
-When something wants to pull from the pool, the pool provides the last entry of the list. If none are available, it spawns the prefab in place and provides it.
+When something wants to pull from the pool, the pool provides the last entry of the list. If none are available, it spawns the prefab in place and provides it. Returning an object to the pool just adds it to the end of the free list.
 I've found it works very well for the intended time-slicing nature needed in VRChat where udon overhead is pretty large,
 we can't afford to freeze a client by doubling the pool or something
 
