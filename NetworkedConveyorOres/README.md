@@ -72,8 +72,8 @@ Even at our higher 5x testing rate, things are looking smooth, pickups and drops
 We can do better though, can't we?
 
 Instantiation is expensive, VRChat likely does some runtime checking across all components on prefabs you want to instantiate. This is how my network spawning operates normally though.
-Additionally, it sends more data than is really necessary to spawn an object.
-The data looks something like this:
+Additionally, it sends more data than is really necessary if we could pool the ores instead.
+The data for a network spawn looks something like this:
 
 PrefabId | NetId | OwnerId | Pos | Rot | Scale | ParentNetId
 
