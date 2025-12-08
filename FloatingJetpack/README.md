@@ -7,9 +7,9 @@ Nowadays I do sometimes use shifting origin and sync in a separate coordinate sp
 So this is to say that I started making a physical jetpack for the purpose of testing sync. It lead to a lot of the concepts I now use in what I'd consider my modern style of extrapolation.
 I prefer to call it dead reckoning sometimes because it's more clear what I'm actually referring to, to people that understand.
 The premise is to position an object as close to its current realtime position as possible, despite latency, despite update rate. The real art becomes resolving misprediction into new prediction, obviously we can't just position on the prediction each frame or it'd teleport at each new snapshot arrival.
-You could call it extrapolation, but it has other associations in netcode and beyond (client prediction, interpolation, data).
+You could call it extrapolation, but it has other associations in netcode and beyond (client prediction, interpolation, general data).
 
 The jetpack is controlled by positioning the hands relative to the jetpack body; the triggers control the amount of thrust, which emits from the palm.
-I'll leave a video here for now to showcase what it looks like, but I'd like to expand on the steps it took to make and eventually expand on what extrapolation actually looks like to me (concepts, etc.);
+I'll leave a video here for now to showcase what it looks like, but I'd like to explain the steps it took to make and eventually expand on what extrapolation actually looks like to me (concepts, etc.);
 to achieve something that's positioned at everyone's relative realtime "now", but looks reasonable, despite constantly mispredicting from past data.
 
