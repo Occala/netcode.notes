@@ -11,7 +11,7 @@ Obviously we can't just position on the prediction each frame or it'd teleport a
 You could call it extrapolation, but that has other associations in netcode and beyond (client prediction, interpolation, general data);
 I prefer to call it dead reckoning sometimes because it's more clear what I'm actually referring to, to people that would understand.
 
-This type of sync is not as common, but it is very relevant in certain types of games (flight sims are probably the most prominent where this would be necessary); they each tend to roll their own bespoke solutions as far as I can tell, with little commentary on how it's done.
+This type of sync is not as common, but it is very relevant in certain types of games (flight sims are probably the most prominent type where this would be necessary); they each tend to roll their own bespoke solutions as far as I can tell, with little commentary on how it's done.
 
 The jetpack is controlled by positioning the hands relative to the jetpack body; the triggers control the amount of thrust, which emits from the palm.
 At some point I'd like to explain the steps it took to make and eventually expand on what extrapolation actually looks like to me (concepts, etc.);
