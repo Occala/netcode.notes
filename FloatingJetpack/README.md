@@ -15,7 +15,7 @@ The jetpack is controlled by positioning the hands relative to the jetpack body;
 At some point I'd like to explain the steps it took to make and eventually expand on what extrapolation actually looks like to me (concepts, etc.);
 to achieve something that's positioned at everyone's relative realtime "now", but looks reasonable, despite constantly mispredicting from past data.
 
-There are separate concerns that may not be immediately apparent, timing is a large factor. Network timing, as well as frame-timing become critical for something I'd consider "correct", but there's a lot of room in the space, there's not an overwhelming single/best solution.
+There are separate concerns that may not be immediately apparent, timing is a large factor. Network timing, as well as frame-timing become critical for something I'd consider "correct", but there's a lot of room in the space; there's not an overwhelming single/best solution.
 
 I'll leave a video here for now to showcase what it looks like, though I don't think it really captures what the user (me!) is doing to control it
 
