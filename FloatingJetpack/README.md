@@ -17,6 +17,6 @@ to achieve something that's positioned at everyone's relative realtime "now", bu
 
 There are separate concerns that may not be immediately apparent, timing is a large factor. Network timing, as well as frame-timing become critical for something I'd consider "correct", but there's a lot of room in the space; there's not an overwhelming single/best solution.
 
-I'll leave a video here for now to showcase what it looks like, though I don't think it really captures what the user (me!) is doing to control it
+I'll leave a video here for now to showcase what the floating jetpack looks like, though I don't think it really captures what the user (me!) is doing to control it
 
 https://github.com/user-attachments/assets/e5440e54-c2c0-4fa3-a2a3-77d988a1dd7d
