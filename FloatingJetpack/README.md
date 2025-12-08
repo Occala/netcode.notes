@@ -13,5 +13,5 @@ The jetpack is controlled by positioning the hands relative to the jetpack body;
 I'll leave a video here for now to showcase what it looks like, but I'd like to expand on the steps it took to make and eventually expand on what extrapolation actually looks like to me (concepts, etc.);
 to achieve something that's positioned at everyone's relative realtime "now", but looks reasonable, despite constantly mispredicting from past data.
 
-<video src="netcode.notes/FloatingJetpack/flyTime.mp4" controls>
+<video src="flyTime.mp4" controls>
 </video>
