@@ -8,7 +8,7 @@ So this is to say that I started making a physical jetpack for the purpose of te
 The premise is to position an object as close to its current realtime position as possible, despite latency, despite update rate. The prediction portion is trivial, so what's the catch?
 
 Obviously we can't just position on the prediction each frame or it'd teleport at each new snapshot arrival; the real art becomes resolving the past misprediction into a new prediction.
-You could call it extrapolation, but it has other associations in netcode and beyond (client prediction, interpolation, general data);
+You could call it extrapolation, but that has other associations in netcode and beyond (client prediction, interpolation, general data);
 I prefer to call it dead reckoning sometimes because it's more clear what I'm actually referring to, to people that would understand.
 
 The jetpack is controlled by positioning the hands relative to the jetpack body; the triggers control the amount of thrust, which emits from the palm.
