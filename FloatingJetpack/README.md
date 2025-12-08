@@ -1,7 +1,7 @@
 Placeholder for my jetpack related stuff, originally made for VR purposes of vehicle testing. I found it unsatisfactory to test extrapolation / dead reckoning with the vehicles I could find, plus vehicles aren't really my thing
 
 Primarily, cars and air vehicles tend to move too quickly to work well within float precision of a typical scene. Consider that a jet can cross 4km in less than 20 seconds.
-We could limit them to this small range, but things like jets aren't especially good at vectoring in the way we'd want to facilitate testing, it's hard to test them outside of side-by-side flight.
+We could limit them to this small range, but things like jets aren't especially good at vectoring in the way we'd want to facilitate testing, helicopters tend to be too heavy feeling, cars are difficult to make.
 Nowadays I do sometimes use shifting origin and sync in a separate coordinate space, but I don't know if I'll go into detail on that style of thing yet.
 
 So this is to say that I started making a physical jetpack for the purpose of testing sync. It lead to a lot of the concepts I now use in what I'd consider my modern style of extrapolation.
