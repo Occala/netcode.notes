@@ -9,7 +9,7 @@ I prefer to call it dead reckoning sometimes because it's more clear what I'm ac
 The premise is to position an object as close to its current realtime position as possible, despite latency, despite update rate.
 You could call it extrapolation, but it has other associations in netcode and beyond.
 
-It's controlled by positioning the hands relative to the jetpack body; the triggers control the amount of thrust, which emits from the palm.
-I'll leave a video here for now to showcase what it looks like, but I'd like to expand on the steps it took to make and eventually expand on what extrapolation actually looks like (concepts, etc.)
-to achieve something that's positioned at everyone's relative realtime "now", but looks reasonable, despite constantly mispredicting past data.
+The jetpack is controlled by positioning the hands relative to the jetpack body; the triggers control the amount of thrust, which emits from the palm.
+I'll leave a video here for now to showcase what it looks like, but I'd like to expand on the steps it took to make and eventually expand on what extrapolation actually looks like to me (concepts, etc.);
+to achieve something that's positioned at everyone's relative realtime "now", but looks reasonable, despite constantly mispredicting from past data.
 
