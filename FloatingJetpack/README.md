@@ -13,11 +13,11 @@ I prefer to call it dead reckoning sometimes because it's more clear what I'm ac
 
 This type of sync is not as common, but it is very relevant in certain types of games (flight sims are probably the most prominent type where this would be necessary); they each tend to roll their own bespoke solutions as far as I can tell, with little commentary on how it's done.
 
+There are separate concerns that may not be immediately apparent, timing is a large factor. Network timing, as well as frame-timing become critical for something I'd consider "correct", but there's a lot of room in the space; there's not an overwhelming single/best solution.
+
 The jetpack is controlled by positioning the hands relative to the jetpack body; the triggers control the amount of thrust, which emits from the palm.
 At some point I'd like to explain the steps it took to make and eventually expand on what extrapolation actually looks like to me (concepts, etc.);
 to achieve something that's positioned at everyone's relative realtime "now", but looks reasonable, despite constantly mispredicting from past data.
-
-There are separate concerns that may not be immediately apparent, timing is a large factor. Network timing, as well as frame-timing become critical for something I'd consider "correct", but there's a lot of room in the space; there's not an overwhelming single/best solution.
 
 I'll leave a video here for now to showcase what the floating jetpack looks like, though I don't think it really captures what the user (me!) is doing to control it
 
