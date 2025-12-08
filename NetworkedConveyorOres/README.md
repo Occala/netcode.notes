@@ -72,7 +72,7 @@ Even at our higher 5x testing rate, things are looking smooth, pickups and drops
 We can do better though, can't we?
 
 Instantiation is expensive, VRChat likely does some runtime checking across all components on prefabs you want to instantiate. Instantiation is how my network spawning operates normally though.
-Additionally, it sends more data than is really necessary if we could pool the ores instead.
+Additionally, it sends more data than is really necessary if we could keep ores around ahead of time.
 The data for a network spawn looks something like this:
 
 PrefabId | NetId | OwnerId | Pos | Rot | Scale | ParentNetId
@@ -83,7 +83,7 @@ We really only need something like:
 
 ActiveState | Pos | Rot
 
-With pooling we just need to ensure we interact with the pool instead when we would have spawned or despawned the object.
+With pooling we just need to ensure we interact with the pool when we would have spawned or despawned the object.
 We also need to be a little more mindful of resetting state when it's pulled, resetting things like velocity too.
 
 
