@@ -5,7 +5,7 @@ We could limit them to this small range, but things like jets aren't especially 
 Nowadays I do sometimes use shifting origin and sync in a separate coordinate space, but I don't know if I'll go into detail on that style of thing yet.
 
 So this is to say that I started making a physical jetpack for the purpose of testing sync. It lead to a lot of the concepts I now use in what I'd consider my modern style of extrapolation.
-The premise is to position an object as close to its current realtime position as possible, despite latency, despite update rate. Obviously we can't just position on the prediction each frame or it'd teleport at each new snapshot arrival; the real art becomes resolving the past misprediction into a new prediction.
+The premise is to position an object as close to its current realtime position as possible, despite latency, despite update rate. The prediction portion is trivial, so what's the catch? Obviously we can't just position on the prediction each frame or it'd teleport at each new snapshot arrival; the real art becomes resolving the past misprediction into a new prediction.
 You could call it extrapolation, but it has other associations in netcode and beyond (client prediction, interpolation, general data);
 I prefer to call it dead reckoning sometimes because it's more clear what I'm actually referring to, to people that would understand.
 
