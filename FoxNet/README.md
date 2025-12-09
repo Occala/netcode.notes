@@ -19,3 +19,7 @@ that means variables you set rarely (a name field that players can modify) must 
 
 you can get around this by splitting the synced components across multiple objects, but this has odd ownership handling across those objects and is more error-prone.
 Though it does technically have some slight atomicity implications for components on the same object, but it would be very odd to rely on cross-component atomicity in that way
+
+
+
+late joiners are handled in a fairly specific way, but it's not especially hard. first we snapshot all objects, then we pass it to the late-joiner over time. they queue session calls to process after they fully receive the snapshot. they continue to queue session calls until they get through all of them, enforcing order. conceptually not very hard, but it can be a bit difficult to structure and requires a decent understanding of how to order the things you want to do
