@@ -11,7 +11,7 @@ first, it allows network spawning and despawning. this negates the strict need f
 pooling can be a pain to interact with, requires you route through a central source anyway to avoid race conditions, requires enough of every type of object in amounts that are enough for each player (kind of an n squared problem). It's also not exactly free for udon synced objects to just "exist" in an unused state afaik
 
 
-more than that, it allows structuring logic in a client-server style which is much easier to account for than the typical distributed authority setup in vrc (this is actually the biggest benefit by far; you can do this in vrc, but structuring it in this way makes it much more clear-cut)
+more than that, it allows structuring logic in a client-server style which is much easier to account for than the typical distributed authority setup in vrc (this is actually the biggest benefit by far; you can do this in vrc, but structuring it in this way makes it much more clear-cut); we strictly require a consistent host player. logic reliant upon the host and many networking concepts will cease to work if the host leaves
 
 
 a side benefit is the allowance of segmented serialization. udon/vrc networking does allow multiple synced components on an object, but a call to serialize will serialize all components on the object.
