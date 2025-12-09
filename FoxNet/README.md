@@ -22,4 +22,4 @@ Though it does technically have some slight atomicity implications for component
 
 
 
-late joiners are handled in a fairly specific way, but it's not especially hard. first we snapshot all objects, then we pass it to the late-joiner over time. they queue session calls to process after they fully receive the snapshot. they continue to queue session calls until they get through all of them, enforcing order. conceptually not very hard, but it can be a bit difficult to structure and requires a decent understanding of how to order the things you want to do
+late joiners are handled in a fairly specific way. first we snapshot all networked objects, then we pass it to the late-joiner over time. they queue session calls to process after they fully receive the snapshot. they continue to queue session calls until they get through all of them, enforcing order. conceptually not very hard, but it can be a bit difficult to structure and requires a decent understanding of how to order the things you want to do
