@@ -1,7 +1,7 @@
 placeholder related to custom networking in vrc, though i may not write a proper explanation for a while
 
 
-after an initial version (which i call v1), i realized the need for a different approach. v1 handled network objects at network object level. their logic and state would exist on a derived network object. i learned that this was a mistake when it comes to sane structure and interacting with logic as a creator. i also used 1 udon/vrc network event per message, this proved to be extremely costly on metadata/header vrc side. when starting v2, the first thing i made was a way to bundle messages (basically structuring a packet) and handle them in a queued fashion. v2 also uses a network behaviour style, where network objects exist more as data holders/descriptors alone
+after an initial version (which i call v1), i realized the need for a different approach. v1 handled network objects at network object level. their logic and state would exist on a derived network object. i learned that this was a mistake when it comes to sane structure and interacting with logic as a creator. network objects started to become monolithic and gained many generic features that would be better suited as components in a composition style. i also used 1 udon/vrc network event per message, this proved to be extremely costly on metadata/header vrc side. when starting v2, the first thing i made was a way to bundle messages (basically structuring a packet) and handle them in a queued fashion. v2 also uses a network behaviour style, where network objects exist more as data holders/descriptors alone
 
 
 why?
