@@ -6,7 +6,7 @@ after an initial version (which i call v1), i realized the need for a different 
 
 why?
 
-first, it allows network spawning and despawning. this negates the strict need for rigid pools that hold all synced objects in advance (at editor time)
+first, it allows network spawning and despawning. this negates the strict need for rigid pools that hold all synced objects in advance (at editor/upload time)
 
 pooling can be a pain to interact with, requires you route through a central source anyway to avoid race conditions, requires enough of every type of object in amounts that are enough for each player (kind of an n squared problem). It's also not exactly free for udon synced objects to just "exist" in an unused state afaik
 
