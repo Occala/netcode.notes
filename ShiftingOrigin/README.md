@@ -1,4 +1,4 @@
-Because I should probably write about this at some point;
+Because I should write about this at some point;
 
 Shifting origin (sometimes called floating origin, i think it's more technically correct to call this specific thing shifting origin though, people seem to get upset about the distinction)
 is a silly technique to maintain the player near origin to mitigate floating point precision error as distance from zero increases
