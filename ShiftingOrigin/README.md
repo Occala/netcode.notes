@@ -20,7 +20,7 @@ Player 1 ends up at 50, 0, 0 positionally, with a virtual coordinate of 1, 0, 0
 
 
 If player 1 wants to inform others of their location, they advertise both their virtual offset (1, 0, 0) and their remainder in world space (50, 0, 0).
-This is under the assumption of integer offsets, where each integer represents one threshold shift. You can also use doubles directly and represent the final absolute position over network, because it's sometimes easier to work with.
+This is under the assumption of integer offsets, where each unit represents one threshold shift. You can also use doubles directly and represent the final absolute position over network, because it's sometimes easier to work with.
 
 Now player 2, who is sitting near origin, is given a snapshot regarding Player 1. They themselves are at 0, 0, 0 in grid space and 0, 0, 0 in world space.
 They know that the delta between Player 1's virtual offset and their own is 1, 0, 0. As a result, they position Player 1's vehicle at 1000, 0, 0 based on the threshold number we use. They then add the remaining float components, resulting in a position of 1050, 0, 0. We want to convert to this relative position prior to working with the value, at which point we can treat it much like a normal positional target for the sake of interpolation or anything else
