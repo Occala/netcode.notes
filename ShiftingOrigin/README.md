@@ -26,5 +26,5 @@ They know that the delta between Player 1's virtual offset and their own is 1, 0
 
 Again, it's pretty simple as a concept, I may need to describe the specifics related to VRC at some point though. The premise is relative positioning of dynamic bodies for the most part, while maintaining the local player near origin to preserve precision
 
-There are some extra things that are needed if you're interpolating or extrapolating. Consider that you may be working with some interpolation target (positional), at the point of locally shifting, any targets in world space must be shifted back by the amount of a shift. Might be a bit confusing to explain
+There are some extra things that are needed if you're interpolating or extrapolating. Consider that you may be working with some interpolation target (positional); at the point of locally shifting, any targets in world space must be shifted back by the amount of a shift. Might be a bit confusing to explain
 
