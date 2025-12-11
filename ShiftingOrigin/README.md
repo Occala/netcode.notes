@@ -12,7 +12,7 @@ Player 1 crosses the threshold on the x axis while using a vehicle, ending up at
 At this time, we shift objects back by this amount. This includes dynamic objects (other vehicles, the player's own vehicle) and things like terrain/environmental features.
 We also increment Player 1's virtual position by 1 on the x component
 
-I prefer interpreting the position of terrain personally, rather than doing an incremental shift each time (which i reserve for dynamic objects typically), because I'm wary of accumulating error simply from shifting the terrain around. In practice, this is probably not a large concern if you keep sane threshold shifts and don't have an especially large environment.
+I prefer interpreting the position of terrain personally, rather than doing an incremental shift each time (which i reserve for dynamic objects typically), because I'm wary of accumulating error simply from shifting the terrain around. In practice, this is probably not a large concern if you keep sane (whole number) threshold shifts and don't have an especially large environment.
 
 Interpreting the position post-shift involves caching the absolute position of a static object at editor-time or early into your startup. Then, upon shifting, interpreting where it is relative to the local player's virtual offset. More on that later though
 
