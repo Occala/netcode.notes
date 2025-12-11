@@ -9,7 +9,8 @@ If the player moves more than some amount from origin on any axis, we shift back
 
 Player 1 crosses the threshold on the x axis while using a vehicle, ending up at 1050, 0, 0 in terms of position
 
-At this time, we shift objects back by this amount. This includes dynamic objects (other vehicles, the player's own vehicle) and things like terrain/environmental features
+At this time, we shift objects back by this amount. This includes dynamic objects (other vehicles, the player's own vehicle) and things like terrain/environmental features.
+We also increment Player 1's virtual position by 1 on the x component
 
 I prefer interpreting the position of terrain personally, rather than doing an incremental shift each time (which i reserve for dynamic objects typically), because I'm wary of accumulating error simply from shifting the terrain around.
 Interpreting involves caching the absolute position of a static object and upon shifting, interpreting where it is relative to the local player's virtual offset. More on that later though
