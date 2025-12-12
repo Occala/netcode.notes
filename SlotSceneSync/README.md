@@ -24,7 +24,8 @@ Slots in this case do exist in advance (at least the data holder does), but the 
 
 Components have a few generic interface points, they can be queried for their properties. A "Cube" prefab might hold (in unity terms) a mesh filter, a mesh renderer and a box collider
 
-The abstracted properties it contains are: Casts Shadows, Receives Shadows, Box Collider Enabled, Mesh Renderer Enabled, and Color
+The abstracted properties it contains are: Casts Shadows, Receives Shadows, Box Collider Enabled, Mesh Renderer Enabled, and Color.
+As a bit field, this is one byte if the cube maintains default state. The 4 bools are simply part of the bit field, as flags. The 4th bit describes whether color is something other than the default color (which is white/unity default in this case), if the bit is set, we know to read the color after the bit field.
 
 These virtual components are referenced by index typically. You select a slot, then a component index (and then properties on that component by index). You can make multiple components on a slot. Slots can be nested
 
