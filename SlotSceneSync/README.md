@@ -12,6 +12,8 @@ All objects are defined as some base synced type, this is generic, but objects c
 
 These synced entities can hold "components" under them, VRC does not allow AddComponent calls, so this is done in a fairly specific way. Components are instead prefabs, added under a specific hierarchy within the entity and treated like components.
 
+These virtual or abstracted components can also be queried for their bytes (they have a serialization and deserialization method), so if a slot is asked for its bytes, it provides its own, followed by all component bytes under it, in a rigid, ordered way
+
 I'd also note, though it's not especially important for concept, that these synced entities are actually proxies. The synced version of the entity (really just the data and sync object) are somewhere, the proxy is somewhere else.
 This allows us to actually set the proxy inactive without disrupting sync on the underlying sync representing that entity
 
