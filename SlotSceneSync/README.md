@@ -1,8 +1,8 @@
 the name is really vague, but this was one of my more involved projects in terms of serialization; it's probably pretty boring to most, but i found it extremely interesting. So i'll explain some pretty technical portions. This might be very slightly relevant if you were trying to make a way to interpret your own scenes in VRC for some reason
 
-in resonite (kind of a vr game with a lot of runtime creation elements, not quite a full unity editor though), players can create things together. They can work on the same entities at the same time, modify properties and nearly everything in the game is replicated
-
 a "slot" refers to something akin to a gameobject in resonite, but it's more of a synced container
+
+in resonite (kind of a vr game with a lot of runtime creation elements, not quite a full unity editor though), players can create things together. They can work on the same entities at the same time, modify properties and nearly everything in the game is replicated
 
 i wanted to create something like that in vrc, for now i'll try to outline how it works
 
