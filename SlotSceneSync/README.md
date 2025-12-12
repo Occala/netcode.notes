@@ -8,7 +8,7 @@ i wanted to create something like that in vrc, for now i'll try to outline how i
 
 
 
-All objects (slots) are defined as some base, generic, synced type, these slots can be polled for their bytes. That's to say, each slot provides a serialization and deserialization method
+All objects (slots) are defined as some base, synced type, these slots can be polled for their bytes. That's to say, each slot provides a serialization and deserialization method
 
 Slots can hold "components" under them, VRC does not allow AddComponent calls, so this is done in a fairly specific way. Components are instead prefabs, added under a specific hierarchy within the entity and treated like components.
 
