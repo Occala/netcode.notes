@@ -42,3 +42,7 @@ There is some heavy bit fielding that goes into the serialization bytes represen
 I say packing, because all of this is capable of writing and reading in VRChat persistence, a persistence call looks like an iteration over all synced entities, to provide their serialization bytes. It should be no surprise then, that the entry point of startup from persistence looks like a byte block that is pushed into each entity. Versioning is kept on the outer most header of this byte block, once, to ensure upgrading components is possible and that we don't need to note component versioning individually or repeatedly
 
 For the sake of data saving, a byte length is not prefixed to each entry. This is less safe, but saves on data across all available slots. A runtime error will not purge data at least and it's probably ideal that logic doesn't continue if something fails to read, as a result of errors in deserialization
+
+
+
+looking back, the design is more rigid than i'd like, i'd probably approach it differently if i were making it now, but it's still pretty neat i think
