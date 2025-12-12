@@ -26,7 +26,7 @@ Components have a few generic interface points, they can be queried for their pr
 
 The abstracted properties it contains are: Casts Shadows, Receives Shadows, Box Collider Enabled, and Color
 
-These virtual components are referenced by index typically. You select a slot, then a component index (and then component properties by index). You can make multiple components on a slot. Slots can be nested
+These virtual components are referenced by index typically. You select a slot, then a component index (and then properties on that component by index). You can make multiple components on a slot. Slots can be nested
 
 Slots, somewhat generically, encompass some common data related to both GameObjects and Transforms. They hold active state, name, Pos, Rot, Scale and ParentId.
 
