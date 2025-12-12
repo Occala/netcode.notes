@@ -1,4 +1,4 @@
-the name is really vague, but this was one of my more involved projects in terms of serialization; it's probably pretty boring to most, but i found it extremely interesting. So i'll explain some pretty technical portions. This might be very slightly relevant if you were trying to make a way to interpret your own scenes in VRC for some reason
+the name is really vague, but this was one of my more involved projects in terms of serialization; it's probably pretty boring to most, but i found it really interesting. So i'll explain some pretty technical portions. This might be very slightly relevant if you were trying to make a way to interpret your own scenes in VRC for some reason
 
 a "slot" refers to something akin to a gameobject in resonite, but it's more of a synced container
 
