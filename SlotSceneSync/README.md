@@ -1,0 +1,39 @@
+the name is really vague, but this was one of my more involved projects in terms of serialization; it's probably pretty boring to most, but i found it extremely interesting
+
+in resonite (kind of a vr game with a lot of runtime creation elements, not quite a full unity editor though), players can create things together. They can work on the same entities at the same time, modify properties and nearly everything in the game is replicated
+
+a "slot" refers to something akin to a gameobject in resonite, but it's more of a synced container
+
+i wanted to create something like that in vrc, for now i'll briefly outline how it works
+
+
+
+All objects are defined as some base synced type, this is generic, but objects can be interrogated for their bytes. That's to say, each entity provides a serialization and deserialization method
+
+These synced entities can hold "components" under them, VRC does not allow AddComponent calls, so this is done in a fairly specific way. Components are instead prefabs, added under a specific hierarchy within the entity and treated like components.
+
+I'd also note, though it's not especially important for concept, that these synced entities are actually proxies. The synced version of the entity (really just the data and sync object) are somewhere, the proxy is somewhere else.
+This allows us to actually set the proxy inactive without disrupting sync on the underlying sync representing that entity
+
+
+The whole concept is runtime editing, more advanced than the typical seen in VRC, the extent of which is usually editing of baked objects that already exist in the hierarchy.
+
+Synced entities in this case do exist in advance (at least the data holder does), but the componentalization of prefabs means they can be composed into new things.
+
+Components have a few generic interface points, they can be queried for their properties. A "Cube" prefab might hold (in unity terms) a mesh filter, a mesh renderer and a box collider
+
+The abstracted properties it contains are: Casts Shadows, Receives Shadows, Box Collider Enabled, and Color
+
+These virtual components (the cube in this case) are referenced by index typically. You select a slot, then a component index. You can make multiple components on a slot. Slots can be nested
+
+Slots, somewhat generically, encompass some common data related to both GameObjects and Transforms. They hold active state, name, Pos, Rot, Scale and ParentId.
+
+Every property I've noted is synced, if someone selects a property field it is updated every frame. In this way, anyone can push to a property, it is sent to a central player, who enacts the change on the property. It is then serialized
+
+I feel like i've failed to succinctly explain it, but there is a lot going on in a way. The result is that anyone can edit slots, or components, or properties of components.
+These can all be edited at the same time as other players and by the nature of composing multiple basic prefabs together, more complex objects can be made.
+
+
+There is some heavy bit fielding that goes into the synced fields, so slots in the default state do not necessarily advertise all of their individual properties or default name. Unused slots effectively take 1 byte, as we pack them in order.
+
+I say packing, because all of this is capable of writing and reading in VRChat persistence, a persistence call looks like an iteration over all synced entities, to provide their serialization bytes. It should be no surprise then, that the entry point of startup from persistence looks like a byte block that is pushed into each entity. Versioning is kept on the outer most header of this byte block, once, to ensure upgrading components is possible and that we don't need to note component versioning individually or repeatedly
