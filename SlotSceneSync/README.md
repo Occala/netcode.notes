@@ -20,7 +20,7 @@ This allows us to actually set the proxy inactive without disrupting sync on the
 
 The whole concept is runtime editing, more advanced than what would normally be the limit in VRC; the extent of which, is usually editing of baked objects that already exist in the hierarchy.
 
-Synced entities in this case do exist in advance (at least the data holder does), but the componentalization of prefabs means they can be composed into new things.
+Synced entities in this case do exist in advance (at least the data holder does), but the componentalization(?) of prefabs means they can be composed into new things.
 
 Components have a few generic interface points, they can be queried for their properties. A "Cube" prefab might hold (in unity terms) a mesh filter, a mesh renderer and a box collider
 
