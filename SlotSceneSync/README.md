@@ -4,7 +4,7 @@ in resonite (kind of a vr game with a lot of runtime creation elements, not quit
 
 a "slot" refers to something akin to a gameobject in resonite, but it's more of a synced container
 
-i wanted to create something like that in vrc, for now i'll briefly outline how it works
+i wanted to create something like that in vrc, for now i'll try to outline how it works
 
 
 
