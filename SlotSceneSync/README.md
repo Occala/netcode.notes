@@ -45,4 +45,4 @@ For the sake of data saving, a byte length is not prefixed to each entry. This i
 
 
 
-looking back, the design is more rigid than i'd like, i'd probably approach it differently if i were making it now, but it's still pretty neat i think
+looking back, the overall design is more rigid than i'd like, i'd probably approach it differently if i were making it now, but it's still pretty neat i think
