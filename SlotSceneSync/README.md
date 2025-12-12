@@ -36,6 +36,6 @@ I feel like i've failed to succinctly explain it, but there is a lot going on in
 These can all be edited at the same time as other players and by the nature of composing multiple basic prefabs together, more complex objects can be made
 
 
-There is some heavy bit fielding that goes into the synced fields, so slots in the default state do not necessarily advertise all of their individual properties or default name for example. Unused slots effectively take 1 byte, as we pack them in order (we explicitly do not skip entries, for the sake of knowing the slot order without explicitly saving an index)
+There is some heavy bit fielding that goes into the serialization bytes representing fields. Slots in the default state do not necessarily advertise all of their individual properties or default name for example. Unused slots effectively take 1 byte, as we pack them in order with *at minimum* their slot bit field (we explicitly do not skip entries, for the sake of knowing the slot order without explicitly saving an index)
 
 I say packing, because all of this is capable of writing and reading in VRChat persistence, a persistence call looks like an iteration over all synced entities, to provide their serialization bytes. It should be no surprise then, that the entry point of startup from persistence looks like a byte block that is pushed into each entity. Versioning is kept on the outer most header of this byte block, once, to ensure upgrading components is possible and that we don't need to note component versioning individually or repeatedly
