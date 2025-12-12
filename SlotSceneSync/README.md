@@ -30,7 +30,7 @@ These virtual components are referenced by index typically. You select a slot, t
 
 Slots, somewhat generically, encompass some common data related to both GameObjects and Transforms. They hold active state, name, Pos, Rot, Scale and ParentId.
 
-Every property I've noted is synced, if someone selects a property field it is updated every frame. In this way, anyone can push to a property, it is sent to a central player, who enacts the change on the property. It is then serialized
+Every property I've noted is synced, if someone selects a property field it is updated every frame. In this way, anyone can push to a property, it is sent to a central player, who enacts the change on the property. It is then serialized. Clients then interpret the change, they initially purge all components. They then spawn components as they see them come up in the byte block, followed by pushing the component's bytes into the component. They repeat this for all components in the byte block for that slot
 
 I feel like i've failed to succinctly explain it, but there is a lot going on in a way. The result is that anyone can edit slots, or components, or properties of components.
 These can all be edited at the same time as other players and by the nature of composing multiple basic prefabs together, more complex objects can be made
