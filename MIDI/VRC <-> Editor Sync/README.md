@@ -15,8 +15,10 @@ We just need a shared idea of which objects are which. I didn't know much about 
 The convoluted part is the pipeline probably, we don't really want to run a virtual MIDI driver in unity, I don't even know if that's possible (it probably is). I started trying standalone C# (outside of unity) for the first time.
 This standalone app would act as the relay and logical portion, both the unity editor and vrc would just interpret the results.
 
-The pipeline ultimately looked like unity scene changes being pushed over OSC locally to the C# app, the app then pushed raw bytes via MIDI into VRC. MIDI is a pain to work with like this, but it kind of works.
-(i really don't recommend it). Changes in VRC would be advertised over the debug log, the app would parse them and shuttle them to the editor scene via OSC, completing the link in a way
+So, changes in the unity scene were pushed over OSC locally to the C# app, the app then pushed raw bytes via MIDI into VRC. MIDI is a pain to work with like this, but it kind of works.
+(i really don't recommend it).
+
+Conversely, changes in VRC would be advertised over the debug log, the app would parse this and shuttle that data to the editor scene via OSC, completing the link in a way
 
 But wait, how do we know if VRC saw it? Well, the app has to parse the debug log. VRC-side, via udon, we print to the debug log. This resembled simple acks. Additionally, if you push more than some amount of MIDI commands (it's around 100) to VRC, it simply crashes.
 So the parsing is a necessity, to know when it's time to push more data and to know what the client has seen. There's a VRC/MIDI repository somewhere on github that has a decent example of this if you want to see an example
@@ -25,7 +27,7 @@ So here's how that looked, I put some cubes in the scene and started reflecting 
 
 https://github.com/user-attachments/assets/8c7b24b3-007e-4dab-a1d7-227ce64feb54
 
-I probably won't spend too much time explaining, but since I had a pipeline to send data about objects, I started trying to replicate other properties. Notably, color and collider state were good ones to test. The interpreting client can propagate the changes into the session (to other players) over normal udon sync, too
+Since I had a pipeline to send data about objects, I started trying to replicate other properties. Notably, color and collider state were good ones to test. The interpreting client can propagate the changes into the session (to other players) over normal udon sync, too
 
 https://github.com/user-attachments/assets/f903494c-8ab9-423a-9acf-99908dae0a76
 
