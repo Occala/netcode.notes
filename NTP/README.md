@@ -12,7 +12,7 @@ Some basic rules can help you discard extreme outliers, exchanges with a RTT > 1
 I ended up using standard deviation for the primary filter.
 First, we collect n samples (I typically used around 12). After collecting them in a buffer, we filter them.
 Afterwards, we commit both the RTT and clock offset to working averages.
-I used a moving mean style of averaging I believe, but EMA or even just real averaging can work
+I used a moving average, but real averaging can work too
 
 The shared timespace becomes localClock + clockOffset when you need to poll it.
 
