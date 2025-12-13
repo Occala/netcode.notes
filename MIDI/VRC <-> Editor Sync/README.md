@@ -16,7 +16,7 @@ The convoluted part is the pipeline probably, we don't really want to run a virt
 This standalone app would act as the relay and logical portion, both the unity editor and vrc would just interpret the results.
 
 So, changes in the unity scene were pushed over OSC locally to the C# app, the app then pushed raw bytes via MIDI into VRC. MIDI is a pain to work with like this, but it kind of works.
-(i really don't recommend it).
+(i really don't recommend it)
 
 Conversely, changes in VRC would be advertised over the debug log, the app would parse this and shuttle that data to the editor scene via OSC, completing the link in a way
 
