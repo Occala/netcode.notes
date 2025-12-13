@@ -14,7 +14,7 @@ First, we collect n samples (I typically used around 12). After collecting them 
 Afterwards, we commit both the RTT and clock offset to working averages.
 I used a moving average, but real averaging can work too
 
-The shared timespace becomes localClock + clockOffset when you need to poll it.
+The shared timespace becomes localClock + clockOffset when you need to poll it
 
 
 VRChat provides a synced time source, so why wouldn't I just use that?
