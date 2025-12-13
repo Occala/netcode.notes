@@ -27,7 +27,7 @@ So here's how that looked, I put some cubes in the scene and started reflecting 
 
 https://github.com/user-attachments/assets/8c7b24b3-007e-4dab-a1d7-227ce64feb54
 
-Since I had a pipeline to send data about objects, I started trying to replicate other properties. Notably, color and collider state were good ones to test. The interpreting client can propagate the changes into the session (to other players) over normal udon sync, too
+Since I had a pipeline to send data about objects, I started trying to replicate other properties. Color and collider state felt like good things to test. The interpreting client can propagate the changes into the session (to other players) over normal udon sync, too
 
 https://github.com/user-attachments/assets/f903494c-8ab9-423a-9acf-99908dae0a76
 
