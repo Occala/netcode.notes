@@ -2,7 +2,7 @@ Clock sync! In VRC?
 
 I think it sounds really scary as a topic, but it's super simple. It's like 4 numbers and you do a tiny bit of math and it gives you a clock offset and the round trip time
 
-We align this towards the master, so an unfortunate consequence is that unless you align to something that should typically be close enough (like UTC), it requires you reset the sampling if the master changes. It may be possible to slowly drift the clock instead, but I didn't like how it felt
+We align this towards the master, so an unfortunate consequence is that unless you align to something that should typically be close enough (like UTC), it requires you reset the sampling if the master changes. It may be possible to slowly drift the clock instead (this would be fine in UTC imo), but I didn't like how it felt
 
 The actual difficulty I had in implementing this was in measuring what was a quality sample.
 The wikipedia page will show you the formula, but it won't necessarily give you practical implementation of quality sampling
