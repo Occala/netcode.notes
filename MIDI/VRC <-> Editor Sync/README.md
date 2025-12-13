@@ -4,6 +4,8 @@ First, a very old OSC sample that I made, which the idea evolved from. Changes i
 I thought it was cool to edit something in a unity scene and push the changes to VRC. The scale component was a bit broken. It supported arbitrary object counts, through parameter cycling.
 People do a similar thing better, in some modern setups, to save on synced params by maintaining saved and local avatar params that they cycle on to synced params; advertising them briefly.
 
+Notably this used a prefab someone made to reassemble quantized positions in VRC (VRC unfortunately always limits avatar params to a byte, so floats have to be reconstructed from multiple bytes effectively)
+
 https://github.com/user-attachments/assets/ad7f2c02-a008-4300-a751-8e68066c4b26
 
 At some point I started using midi to push data to VRC worlds, because that's even more interesting. But wait, we can read from VRC too with the debug log.
