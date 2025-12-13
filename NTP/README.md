@@ -19,7 +19,7 @@ The shared timespace becomes localClock + clockOffset when you need to poll it
 
 VRChat provides a synced time source, so why wouldn't I just use that?
 - I usually do
-- VRChat only samples their network time once, on join. This is susceptible to clock drift
+- VRC only samples their network time once, on join. This is susceptible to clock drift
 - VRC's sendTime/receiveTime stamps lose millisecond precision, based on the float time source they use, after the game has been open for around 19 hours
 - Sampling once means the initial read isn't necessarily accurate
 - It uses an older clock sync scheme afaik (i forget the name, but basically you send a packet, receive a time back, then measure how long it was from send to receive to estimate the RTT. targetTime = T2 + (RTT / 2))
