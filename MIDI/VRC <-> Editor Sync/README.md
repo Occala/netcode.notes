@@ -1,5 +1,7 @@
 this is a much older thing i worked on
 
+to preface, it became a basic way to sync runtime changes between a unity scene and a corresponding vrc world
+
 First, a very old OSC sample that I made, which the idea evolved from. Changes in a unity client (separate to VRC) are relayed to an avatar in VRC over OSC.
 I thought it was cool to edit something in a unity scene and push the changes to VRC. The scale component was a bit broken. It supported arbitrary object counts, through parameter cycling.
 People do a similar thing better, in some modern setups, to save on synced params by maintaining saved and local avatar params that they cycle on to synced params; advertising them briefly.
