@@ -29,7 +29,7 @@ I probably won't spend too much time explaining, but since I had a pipeline to s
 
 https://github.com/user-attachments/assets/f903494c-8ab9-423a-9acf-99908dae0a76
 
-And an extra one with some scaling too
+And an extra one with some more scaling
 
 https://github.com/user-attachments/assets/da2aa651-7fc1-4448-bb98-e82d2c23970c
 
