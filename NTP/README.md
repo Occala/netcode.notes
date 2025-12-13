@@ -23,7 +23,7 @@ VRChat provides a synced time source, so why wouldn't I just use that?
 - VRC's sendTime/receiveTime stamps lose millisecond precision, based on the float time source they use, after the game has been open for around 19 hours
 - Sampling once means the initial read isn't necessarily accurate
 - It uses an older clock sync scheme afaik (i forget the name, but basically you send a packet, receive a time back, then measure how long it was from send to receive to estimate the RTT. targetTime = T2 + (RTT / 2))
-- It can only resolve millisecond accuracy
+- The network time can only resolve to a millisecond
 - It wraps eventually, based upon the underlying server. So this can happen at any point, requiring the use of deltas only, you shouldn't really use absolute stamps
 - It advances in realtime, this is the most dense topic on this page, but for brevity i will just say that is not great for network times actually
 
