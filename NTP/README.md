@@ -5,7 +5,7 @@ I think it sounds really scary as a topic, but it's super simple. It's like 4 nu
 We align this towards the master, so an unfortunate consequence is that unless you align to something that should typically be close enough (like UTC), it requires you reset the sampling if the master changes. It may be possible to slowly drift the clock instead (this would be fine in UTC imo), but I didn't like how it felt
 
 The actual difficulty I had in implementing this was in measuring what was a quality sample.
-The wikipedia page will show you the formula, but it won't necessarily give you practical implementation of quality sampling
+The wikipedia page will show you the NTP formula, but it won't necessarily give you practical implementation of quality sampling
 
 Some basic rules can help you discard extreme outliers, exchanges with a RTT > 1 or < 0 are extreme, we discard these prior to anything else
 
