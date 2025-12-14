@@ -12,7 +12,7 @@ I thought it would be neat if I had my sending unity scene print the doubles it 
 https://github.com/user-attachments/assets/12e522e2-d4c7-43eb-8a60-5bd03e0351ab
 
 I tried a few other things, but the most interesting was a slider on my avatar. The intent was like a remote control that allowed me to control some volume in the world. Obviously this would be much easier if I just used world dynamics on a pickup probably, but I thought it'd be more interesting if the remote was on the avatar itself. It had both a radial slider for changing skybox color and a standard avatar slider for denoting volume. The standard slider could also be short pressed by a different finger to toggle the muted state of the audio source.
-It follows a similar origin reading scheme for senders/receivers, so I won't detail it.
+It follows a similar origin reading scheme for senders/receivers, so I won't detail it again
 
 https://github.com/user-attachments/assets/3c85e9bc-79fb-49d4-80d3-3d65898eb295
 
