@@ -2,6 +2,8 @@
 
 Preface: This is basically custom networking in VRC. I was hesitant to call it custom networking at first, it seems like an odd claim. With that said, I only use udon's networking to send raw bytes over an event. I also use their PlayerIds and representations of players, because it'd be very indirect to abstract those and serve no purpose. This is kind of a toy network framework thing. I realized at some point that I was understanding the reasons behind network library design and felt like I could just try it myself. A network manager is not actually that hard, nor is network spawning, I think the structural decisions are the harder parts
 
+A decent advantage is data reduction, relative to the large overhead/header in udon (this is very large for events, per object it's probably moderate). I only have to pay VRC's overhead once per bundle that goes out
+
 To network spawn an entity, you just hold a shared idea of what prefabs can be spawned. Spawn one locally, give it a unique identifier and inform everyone. Now everyone has an object they can refer to as the same instance
 
 
