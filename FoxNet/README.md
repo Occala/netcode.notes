@@ -5,7 +5,7 @@ Preface: This is basically custom networking in VRC. I was hesitant to call it c
 To network spawn an entity, you just hold a shared idea of what prefabs can be spawned. Spawn one locally, give it a unique identifier and inform everyone. Now everyone has an object they can refer to as the same instance
 
 
-Here's network object spawning in action, these boxes are not pooled and do not use VRC's networking just to be very clear. Networking transforms like this has some specific details I'll note very shortly
+Here's network object spawning in action, these boxes are not pooled and do not use VRC's networking just to be very clear. Networking transforms like this has some specific details I'll note below
 
 https://github.com/user-attachments/assets/5165848b-c75f-476c-85aa-2fed392a1880
 
