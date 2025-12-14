@@ -3,7 +3,7 @@ I wanted to explain some things about world osc, which is kinda possible now sin
 This is not practical, but is technically interesting. It's odd that VRC doesn't expose world-side osc to allow easier data relay
 
 For one, if you have a compatible world and avatar setup, you can push data in either direction. To test this, I sent OSC data from a unity scene to an avatar, my corresponding world then read the avatar's input bytes. This sent around 10 bytes per command and required very explicit acks to align timing.
-There's 1 byte of header denoting the data type, I decided I'd support up to 8 bytes of data and implemented doubles to test it. 1 byte was reserved for denoting the bytes as atomically ready to push (because osc sends are not atomic, we change the header, then the data bytes, then flag the send as valid with the trailing byte).
+There's 1 byte of header denoting the data type, I decided I'd support up to 8 bytes of data and implemented doubles to test it. 1 byte was reserved for denoting the bytes as atomically ready to push (because osc sends are not atomic, we change the header, then the data bytes, then flag the send as valid with the push byte)
 
 Data is interpreted via proximity to origin, the avatar holds senders that the world can read. Each sender is effectively a byte.
 
