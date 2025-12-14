@@ -1,4 +1,4 @@
-I wanted to explain some things about world osc, which is kinda possible now since the introduction of world dynamics.
+I wanted to explain some things about world osc, which is kinda possible now since the introduction of world dynamics
 
 This is not practical, but is technically interesting. It's odd that VRC doesn't expose world-side osc to allow easier data relay
 
