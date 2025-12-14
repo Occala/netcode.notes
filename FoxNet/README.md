@@ -1,11 +1,15 @@
 
 
-Preface: This is basically custom networking in VRC. I was hesitant to call it custom networking at first, it seems like an odd claim. With that said, I only use udon's networking to send raw bytes over an event. I also use their PlayerIds and representations of players, because it'd be very indirect to abstract those and serve no purpose. This is kind of a toy network framework thing. I realized at some point that I was understanding the reasons behind network library design and felt like I could just try it myself. A network manager is not actually that hard, nor is network spawning, I think the structural decisions are the harder parts
+Preface: This is basically custom networking in VRC. I was hesitant to call it custom networking at first, it seems like an odd claim. With that said, I only use udon's networking to send raw bytes over an event. I also use their PlayerIds and representations of players, because it'd be very indirect to abstract those and serve no purpose. This is kind of a toy network framework thing
 
 A decent advantage is data reduction, relative to the large overhead/header in udon (this is very large for events, per object it's probably moderate). I only have to pay VRC's overhead once per bundle that goes out
 
-To network spawn an entity, you just hold a shared idea of what prefabs can be spawned. Spawn one locally, give it a unique identifier and inform everyone. Now everyone has an object they can refer to as the same instance
 
+Why make it?
+
+I realized at some point that I was understanding the reasons behind network library design and felt like I could just try it myself. Udon's networking is fairly constrained and has limitations you can just bypass if you make your own handling, understanding every aspect also helps when implementing things. A network manager is not actually that hard, nor is network spawning, I think the structural decisions are the harder parts
+
+To network spawn an entity, you just hold a shared idea of what prefabs can be spawned. Spawn one locally, give it a unique identifier and inform everyone. Now everyone has an object they can refer to as the same instance
 
 Here's network object spawning in action, these boxes are not pooled and do not use VRC's networking just to be very clear. Networking transforms like this has some specific details I'll note below
 
@@ -31,7 +35,7 @@ placeholder related to custom networking in vrc, though i may not write a proper
 after an initial version (which i call v1), i realized the need for a different approach. v1 handled network objects at network object level. their logic and state would exist on a derived network object. i learned that this was a mistake when it comes to sane structure and interacting with logic as a creator. network objects started to become monolithic and sometimes encompassed generic features that would be better suited as components in a composition style. i also used 1 udon/vrc network event per message, this proved to be extremely costly on metadata/header vrc side. when starting v2, the first thing i made was a way to bundle messages (basically structuring a packet) and handle them in a queued fashion. v2 also uses a network behaviour style, where network objects exist more as data holders/descriptors alone
 
 
-why?
+why would you want custom networking when udon has networking?
 
 first, it allows network spawning and despawning. this negates the strict need for rigid pools that hold all synced objects in advance (at editor/upload time)
 
