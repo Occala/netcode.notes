@@ -16,14 +16,14 @@ If the player moves more than some amount from origin on any axis, we shift back
 
 Player 1 crosses the threshold on the x axis while using a vehicle, ending up at 1050, 0, 0 in terms of position
 
-At this time, we shift objects back by this amount. This includes dynamic objects (other vehicles, the player's own vehicle) and things like terrain/environmental features.
-We also increment Player 1's virtual position by 1 on the x component
+At this time, we shift objects inverse the threshold amount (if we're at 1050, we detract 1000, if we're at -1050, we add 1000). This includes dynamic objects (other vehicles, the player's own vehicle) and things like terrain/environmental features.
+We also increment Player 1's virtual position by 1 on the x component (or detract 1 if they'd crossed on the negative axis)
 
 I prefer interpreting the position of terrain, rather than doing an incremental shift each time (which i reserve for dynamic objects typically), because I'm wary of accumulating error simply from shifting the terrain around. In practice, this is probably not a large concern if you keep sane (whole number) threshold shifts and don't have an especially large environment.
 
 Interpreting the position post-shift involves: initially caching the absolute position of a static object at editor-time or early into your startup. Then, upon shifting, interpreting where it is relative to the local player's virtual offset. More on that later though
 
-Player 1 ends up at 50, 0, 0 positionally, with a virtual coordinate of 1, 0, 0
+Getting back to the example, Player 1 ends up at 50, 0, 0 positionally, with a virtual coordinate of 1, 0, 0
 
 
 If player 1 wants to inform others of their location, they advertise both their virtual offset (1, 0, 0) and their remainder in world space (50, 0, 0).
