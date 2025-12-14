@@ -14,7 +14,7 @@ This specific network object gun is actually a gun and then a magazine which is 
 
 https://github.com/user-attachments/assets/8dd197fa-a31f-4364-9091-b071adb061da
 
-Of specific note, the sub-objects are actually pooled; the instantiation of that many objects at once would actually drop frames. I time-slice and maintain that the pool has some number of free box shards. The pool can be grown because we have the ability to network spawn, it's nice (compared to udon networking where we would not be able to expand a synced object pool)
+Of specific note, the sub-objects are actually pooled; the instantiation of that many objects at once would actually drop frames. I time-slice and maintain that the pool has some number of free box shards. The pool can expand because we have the ability to network spawn, it's nice (compared to udon networking where we would not be able to expand a synced object pool)
 
 A special note on networked transforms, I use a sort of rate-limiting queue for them. This is to ensure players do not clog if they own too many moving objects. It results in discontinuous (teleporting) movement if it actively begins rate-limiting, but this is definitely better than network clogging. In the following video, the owner of a lot of boxes and box shards adds a large upwards impulse to boxes around them in a radius. The transform sync kicks in rate-limiting and the right client sees the results
 
