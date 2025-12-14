@@ -24,6 +24,8 @@ Of specific note, the box shards (sub-objects) are actually pooled; the instanti
 
 A special note on networked transforms, I use a sort of rate-limiting queue for them. This is to ensure players do not clog if they own too many moving objects. It results in discontinuous (teleporting) movement if it actively begins rate-limiting, but this is definitely better than network clogging. In the following video, the owner of a lot of boxes and box shards adds a large upwards impulse to boxes around them in a radius. The transform sync rate-limiting kicks in and the right client sees the results
 
+I use this style of "yielding" in a few places, things that are low priority can effectively yield/wait or limit themselves if they would otherwise overstep on outbound. VRC doesn't provide a great way to approximate this, so it's more like a switch
+
 https://github.com/user-attachments/assets/72e211e9-a958-47bd-a838-d096c85c11f7
 
 Being able to spawn arbitrary objects at arbitrary counts felt very satisfying after being stuck in VRC's rigid networking, it just works. I paid the complexity once to make a general framework and it feels stable at this point, I don't feel the need to handle it carefully when interacting with it, which is a good feeling and probably a good sign
