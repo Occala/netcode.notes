@@ -34,7 +34,7 @@ They know that the delta between Player 1's virtual offset and their own is 1, 0
 
 Because 0, 0, 0 may not make it apparent, let's imagine an alternate reality where Player 2 is at -1, 0, 0 in virtual coordinates; when they go to interpret the delta, they see: 2, 0, 0. Describing an offset of 2000, 0, 0; which we'd again add the remainder to (50, 0, 0). Resulting in 2050, 0, 0 if Player 2 needs to interpret where Player 1's vehicle is
 
-Again, it's pretty simple as a concept, I may need to describe the specifics related to VRC later on though. The premise is relative positioning (note: relative to the local player's sector/offset, not necessarily relative to the exact location of the local player) of dynamic bodies for the most part, while maintaining the local player near origin to preserve precision
+Again, it's pretty simple as a concept, I may need to describe the specifics related to VRC later on though. The premise is relative positioning (note: relative to the local player's sector/offset, not relative to the exact location of the local player) of dynamic bodies for the most part, while maintaining the local player near origin to preserve precision
 
 There are some extra things that are needed if you're interpolating or extrapolating. Consider that you may be working with some interpolation target (positional); at the point of locally shifting, any targets in world space must be shifted back by the amount of a shift. Might be a bit confusing to explain
 
