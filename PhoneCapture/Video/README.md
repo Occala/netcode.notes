@@ -4,9 +4,10 @@ It takes a while to push all of the data. I used raw pixels (again in a 565 bit 
 
 The video may be a bit confusing so I'll summarize:
 
-Both clients start near client 2's phone, which is showing a video that pans upwards.
-Client 1 rejoins, they go grab their own phone and record a short clip of client 2.
-They both observe the phones for a bit. Client 2 decides to rejoin, then walks over to view the video that client 1 had recorded
+- Both clients start near client 2's phone, which is showing a video that pans upwards
+- Client 1 rejoins, they go grab their own phone and record a short clip of client 2
+- They both observe the phones for a bit
+- Client 2 decides to rejoin, then walks over to view the video that client 1 had recorded
 
 https://github.com/user-attachments/assets/0b3e50d7-8d7b-468a-a49d-245a36a6abc6
 
