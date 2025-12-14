@@ -10,7 +10,7 @@ Here's network object spawning in action, these boxes are not pooled and do not 
 https://github.com/user-attachments/assets/5165848b-c75f-476c-85aa-2fed392a1880
 
 After spawning some boxes, the left client starts spawning gun network objects for the right client.
-This specific gun is actually a gun and then a magazine which is network spawned and slotted in the gun within a frame. The gun itself has an event for firing, the magazine holds an ammo count as a synced variable (again, these are not VRC synced variables or VRC events)
+This specific network object gun is actually a gun and then a magazine which is network spawned and slotted in the gun within a frame. The gun itself has an event for firing, the magazine holds an ammo count as a synced variable (again, these are not VRC synced variables or VRC events)
 
 https://github.com/user-attachments/assets/8dd197fa-a31f-4364-9091-b071adb061da
 
