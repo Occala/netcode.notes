@@ -29,7 +29,7 @@ https://github.com/user-attachments/assets/72e211e9-a958-47bd-a838-d096c85c11f7
 Being able to spawn arbitrary objects at arbitrary counts felt very satisfying after being stuck in VRC's rigid networking, it just works. I paid the complexity once to make a general framework and it feels stable at this point, I don't feel the need to handle it carefully when interacting with it, which is a good feeling and probably a good sign
 
 
-
+-----
 
 
 placeholder related to custom networking in vrc, though i may not write a proper explanation for a while
