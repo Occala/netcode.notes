@@ -1,6 +1,6 @@
 Shifting origin in tandem with extrapolation is not trivial, it requires a good familiarity with both systems. As there's no constrasting terrain, it's hard to imagine what the overall motion looks like here, but I'll just express that these jets are moving at around 260m/s
 
-In this specific case I use a custom network time underneath. Extrapolation is used to position the jets and shifting origin is used to keep players near origin locally. In VRC you may be able to tell that something is origin shifting, because you'll see avatar physbones snap for a frame. You may also hear audio sources snap.
+In this specific case I use a custom network time underneath. Extrapolation is used to position the jets and shifting origin is used to keep players near origin locally. In VRC you may be able to tell that something is origin shifting, because you'll see avatar physbones snap for a frame. You may also hear audio sources snap. My implementation does the shift at a very specific point in execution order, which unfortunately results in these artifacts (though it's necessary)
 
 https://github.com/user-attachments/assets/66f1e25c-f8b2-42d9-be93-0faa36e01db6
 
