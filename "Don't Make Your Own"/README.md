@@ -1,6 +1,6 @@
 sometimes i think people get trapped in this mindset of "why do it when someone else has done it already?"
 
-for some things it's valid, for others not. it really depends
+for some things it's valid, for others not. it really depends. especially if you're considering a very generalized framework, making your own specific solution could feel much better for your use-case
 
 when some easy avenue exists, most people will default to it. it stifles innovation to an extent, but is more accessible
 
