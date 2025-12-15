@@ -22,3 +22,10 @@ to achieve something that's positioned at everyone's relative realtime "now", bu
 I'll leave a video here for now to showcase what the floating jetpack looks like, though I don't think it really captures what the user (me!) is doing to control it
 
 https://github.com/user-attachments/assets/e5440e54-c2c0-4fa3-a2a3-77d988a1dd7d
+
+And another that actually shows some of the hand motion involved
+
+https://github.com/user-attachments/assets/35f60632-2e18-4438-93d3-fdb425323bbf
+
+
+
