@@ -25,7 +25,5 @@ https://github.com/user-attachments/assets/e5440e54-c2c0-4fa3-a2a3-77d988a1dd7d
 
 And another that actually shows some of the hand motion involved
 
-https://github.com/user-attachments/assets/35f60632-2e18-4438-93d3-fdb425323bbf
-
-
+https://github.com/user-attachments/assets/85cdc48e-6621-4dfb-b17b-095daaa8cc9f
 
