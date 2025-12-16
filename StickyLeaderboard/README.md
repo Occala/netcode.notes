@@ -4,7 +4,7 @@ VRC lacks a way to save data to a world. I'll probably write something about per
 
 Each player holds on persistence, the top n entries, pre-sorted by score
 
-This is obviously unsafe (in the sense that players could cheat or spoof entries if they really felt like it, it would probably require ongoing maintenance), but is very technically interesting
+This is obviously unsafe (in the sense that players could cheat or spoof entries if they really felt like it, it would probably require ongoing maintenance), but is very technically interesting. It's probably much more safe to use string-loading and more manual entry submission for a safe leaderboard if that was the intent
 
 For my setup, I decided to record entries with a name, timestamp and score. Limiting it to 1000 entries, people who encounter data must check it against their own, sorting it by top 1000 entries (if that many even exist)
 
