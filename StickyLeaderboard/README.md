@@ -9,3 +9,5 @@ For my setup, I decided to record entries with a name, timestamp and score. Limi
 Newest timestamp wins if there are duplicate entries for a player when resolving incoming data (session update) or from wholesale updates (taking in another player's leaderboard entries, to subsequently sort into your own)
 
 I treated incoming checks in a queued fashion, they could be iterated over multiple frames if needed until the data was clear (to prevent slowdown from checking many entries)
+
+Displaying the data was more of a pain than setting up the data filtering, I ended up using a scrolling UI which understood where the scrollbar was and displayed n entries at that portion of data, to avoid actually holding 1000 ui elements at once
