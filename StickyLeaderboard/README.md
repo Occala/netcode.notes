@@ -2,6 +2,8 @@ this will be more conceptual
 
 VRC lacks a way to save data to a world. I'll probably write something about persistence itself at some point, but this is about the idea of a propagated leaderboard. The data becomes very sticky, as it's aligned across any players who encounter it
 
+Each player holds on persistence, the top n entries, pre-sorted by score
+
 This is obviously unsafe (in the sense that players could cheat or spoof entries if they really felt like it, it would probably require ongoing maintenance), but is very technically interesting
 
 For my setup, I decided to record entries with a name, timestamp and score. Limiting it to 1000 entries, people who encounter data must check it against their own, sorting it by top 1000 entries (if that many even exist)
