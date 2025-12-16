@@ -1,0 +1,9 @@
+this will be more conceptual
+
+VRC lacks a way to save data to a world. I'll probably write something about persistence itself at some point, but this is about the idea of a propagated leaderboard. The data becomes very sticky, as it's aligned across any players who encounter it
+
+This is obviously unsafe, but is very technically interesting
+
+For my setup, I decided to record entries with a name, timestamp and score. Limiting it to 1000 entries, people who encounter data must check it against their own, sorting it by top 1000 entries (if that many even exist)
+
+Newest timestamp wins if there are duplicate entries for a player when resolving incoming data (session update) or from wholesale updates (leaderboard against leaderboard delta)
