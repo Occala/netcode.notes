@@ -2,6 +2,28 @@
 
 Preface: This is basically custom networking in VRC. I was hesitant to call it custom networking at first, it seems like an odd claim. With that said, I only use udon's networking to send raw bytes over an event. I also use their PlayerIds and representations of players, because it'd be very indirect to abstract those and serve no purpose. This is kind of a toy network framework
 
+
+
+
+I'll note a specific case of networking I tried, which turned out to be oddly difficult in udon networking
+
+Imagine you want players to be able to walk around and mine rocks, when they mine rocks, smaller ores pop out. Players can carry around the ores, even players that didn't mine those ores should be able to do so. That doesn't sound especially hard, does it? In VRC's networking this is absurdly complex. Primarily, the lack of network spawning means you will just have a hard limit at some point for these resulting ores. They can't be PlayerObjects if you want anyone to be able to interact/pick them up, at least not easily. Mined rocks that need to respawn have to run some sort of timestamping logic, so that anyone can interpret the respawn if they become the owner. It's such a simple-sounding scenario that ends up being convoluted at best in udon networking. At worst it's just not possible if you don't compromise on the idea of being hard-capped by pooling. This is the type of thing where udon networking fails and custom networking starts to win out
+
+I tried this same scenario in FoxNet after it was stable, it just worked. There was no longer any complex timestamping logic, the host just run a cooldown on mined rocks. If a rock broke, it yields network spawned ores. That's it
+
+-----
+
+
+
+
+
+
+
+
+
+
+
+
 A decent advantage is data reduction, relative to the large overhead/header in udon (this is very large for events, per object it's probably moderate). I only have to pay VRC's overhead once per bundle that goes out
 
 
