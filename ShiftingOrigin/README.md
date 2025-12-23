@@ -23,6 +23,8 @@ I prefer interpreting the position of terrain, rather than doing an incremental 
 
 Interpreting the position post-shift involves: initially caching the absolute position of a static object at editor-time or early into your startup. Then, upon shifting, interpreting where it is relative to the local player's virtual offset. More on that later though
 
+It's also viable to shift back by the exact amount of position you have (in our case it'd be 1050) taking us back to 0 on that axis, I personally don't like doing this, but I believe it would technically be more resilient if you were moving at extreme speeds
+
 Getting back to the example, Player 1 ends up at 50, 0, 0 positionally, with a virtual coordinate of 1, 0, 0
 
 
